@@ -8,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import ant_user.com.app.verticalprogressbar.adapter.MyPagerAdapter;
 
@@ -35,7 +36,6 @@ public class ProgressBarHorizontalMain extends FragmentActivity {
 //                pb.setProgress(progressStatus);
                 vprogressbar.setProgress(progressStatus);
                 if (progressStatus<101){
-
                     handler.postDelayed(runnable,20);
                 }
                 else {
@@ -49,7 +49,7 @@ public class ProgressBarHorizontalMain extends FragmentActivity {
             public void onClick(View v) {
                 progressStatus = 0;
                 handler.postDelayed(runnable,20);
-
+                Toast.makeText(ProgressBarHorizontalMain.this, "DONE", Toast.LENGTH_SHORT).show();
             }
         });
 
