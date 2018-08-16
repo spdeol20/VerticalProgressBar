@@ -50,6 +50,7 @@ public class ProgressBarHorizontalMain extends FragmentActivity {
                 progressStatus = 0;
                 handler.postDelayed(runnable,20);
                 Toast.makeText(ProgressBarHorizontalMain.this, "DONE", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ProgressBarHorizontalMain.this, "DONE", Toast.LENGTH_SHORT).show();
             }
         });
 
