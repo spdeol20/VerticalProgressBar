@@ -1,5 +1,6 @@
 package ant_user.com.app.verticalprogressbar
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
@@ -13,6 +14,7 @@ class MainActivity : AppCompatActivity() {
     private var progressStatus = 0
     private val handler = Handler()
 
+    @SuppressLint("WrongViewCast")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
