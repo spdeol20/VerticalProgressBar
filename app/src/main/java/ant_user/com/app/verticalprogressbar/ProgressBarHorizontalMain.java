@@ -14,11 +14,11 @@ import ant_user.com.app.verticalprogressbar.adapter.MyPagerAdapter;
 
 public class ProgressBarHorizontalMain extends FragmentActivity {
 
+    Runnable runnable;
+    ViewPager pager;
     private int progressStatus = 0;
     private Handler handler = new Handler();
-    Runnable runnable ;
 
-    ViewPager pager;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,10 +36,9 @@ public class ProgressBarHorizontalMain extends FragmentActivity {
                 progressStatus++;
 //                pb.setProgress(progressStatus);
                 vprogressbar.setProgress(progressStatus);
-                if (progressStatus<101){
-                    handler.postDelayed(runnable,20);
-                }
-                else {
+                if (progressStatus < 101) {
+                    handler.postDelayed(runnable, 20);
+                } else {
                     handler.removeCallbacks(runnable);
                 }
             }
@@ -49,7 +48,7 @@ public class ProgressBarHorizontalMain extends FragmentActivity {
             @Override
             public void onClick(View v) {
                 progressStatus = 0;
-                handler.postDelayed(runnable,20);
+                handler.postDelayed(runnable, 20);
                 Toast.makeText(ProgressBarHorizontalMain.this, "DONE", Toast.LENGTH_SHORT).show();
                 Toast.makeText(ProgressBarHorizontalMain.this, "DONE", Toast.LENGTH_SHORT).show();
             }
@@ -61,6 +60,6 @@ public class ProgressBarHorizontalMain extends FragmentActivity {
 
     private void setviewpager() {
         pager.setOffscreenPageLimit(0);
-        pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager(), 2,this));
+        pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager(), 2, this));
     }
 }
