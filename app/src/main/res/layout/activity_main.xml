@@ -1,0 +1,55 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".MainActivity"
+    android:background="#F0F1F2"
+    >
+    <RelativeLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="#676a6b"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            />
+        <ProgressBar
+            android:id="@+id/pb"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            style="@style/CustomProgressBar"
+            android:progressDrawable="@drawable/progressbar_states"
+            android:layout_below="@id/tv"
+            />
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Operation"
+            android:layout_below="@id/pb"
+            android:layout_marginTop="10dp"
+            />
+
+        <ProgressBar
+            android:id="@+id/vprogressbar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="7dp"
+            android:layout_height="match_parent"
+            android:progressDrawable="@drawable/verticle_progressbar"/>
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v4.view.ViewPager>
+</LinearLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="hint_color_light">#d5d3d3</color>
+    <color name="hint_color_dark">#989898</color>
+    <color name="orange_card_color_light">#f3ed936b</color>
+    <color name="light_grey">#f9867a75</color>
+    <color name="green">#f921d239</color>
+</resources>
