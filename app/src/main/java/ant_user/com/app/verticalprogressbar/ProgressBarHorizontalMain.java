@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 
 import ant_user.com.app.verticalprogressbar.adapter.MyPagerAdapter;
+import ant_user.com.app.verticalprogressbar.helper.CountryCodeFlag;
+import ant_user.com.app.verticalprogressbar.model.CountryModel;
 
 public class ProgressBarHorizontalMain extends FragmentActivity {
 
@@ -43,6 +45,8 @@ public class ProgressBarHorizontalMain extends FragmentActivity {
                 }
             }
         };
+        CountryCodeFlag co = new CountryCodeFlag();
+        CountryModel countryModel = co.getDialCodeyByISO("in");
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override

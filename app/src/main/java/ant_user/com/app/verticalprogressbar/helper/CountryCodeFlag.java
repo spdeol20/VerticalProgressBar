@@ -1,11 +1,15 @@
 package ant_user.com.app.verticalprogressbar.helper;
 
 
+import android.support.annotation.NonNull;
+
+import java.util.Arrays;
+import java.util.Comparator;
+
 import ant_user.com.app.verticalprogressbar.R;
 import ant_user.com.app.verticalprogressbar.model.CountryModel;
 
 public class CountryCodeFlag {
-
     private final CountryModel[] COUNTRIES = {
             new CountryModel("AD", "Andorra", "+376", R.drawable.flag_ad, "EUR"),
             new CountryModel("AE", "United Arab Emirates", "+971", R.drawable.flag_ae, "AED"),
@@ -261,4 +265,31 @@ public class CountryCodeFlag {
             new CountryModel("ZM", "Zambia", "+260", R.drawable.flag_zm, "ZMW"),
             new CountryModel("ZW", "Zimbabwe", "+263", R.drawable.flag_zw, "USD"),
     };
+
+    public CountryModel getDialCodeyByISO(@NonNull String countryIsoCode) {
+        countryIsoCode = countryIsoCode.toUpperCase();
+        CountryModel country = new CountryModel();
+        country.setCode(countryIsoCode);//used to compare
+        int i = Arrays.binarySearch(COUNTRIES, country, new ISOCodeComparator());
+        if (i < 0) {
+            return null;
+        } else {
+            return COUNTRIES[i];
+        }
+    }
+
+    // region Comparators
+    public static class ISOCodeComparator implements Comparator<CountryModel> {
+        @Override
+        public int compare(CountryModel country, CountryModel nextCountry) {
+            return country.getCode().compareTo(nextCountry.getCode());
+        }
+    }
+    public static class NameComparator implements Comparator<CountryModel> {
+        @Override
+        public int compare(CountryModel country, CountryModel nextCountry) {
+            return country.getName().compareTo(nextCountry.getName());
+        }
+    }
+// endregion
 }
