@@ -33,7 +33,7 @@ public class ProgressBarHorizontalMain extends FragmentActivity {
             @Override
             public void run() {
                 progressStatus++;
-//                pb.setProgress(progressStatus);
+//              pb.setProgress(progressStatus);
                 vprogressbar.setProgress(progressStatus);
                 if (progressStatus<101){
                     handler.postDelayed(runnable,20);
@@ -53,9 +53,7 @@ public class ProgressBarHorizontalMain extends FragmentActivity {
 //                Toast.makeText(ProgressBarHorizontalMain.this, "DONE", Toast.LENGTH_SHORT).show();
             }
         });
-
         setviewpager();
-
     }
 
     private void setviewpager() {
